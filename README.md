@@ -23,10 +23,15 @@ The appearance of the bug seems related to the JVM, I've tested a few,
 * 11.0.19-zulu
 * 11.0.26-zulu
 * 17.0.12-oracle
+* 11.0.26-tem
+* 11.0.26-amzn
 
 **confirmed OK (bug doesn't occur):**
 * 17.0.12-zulu
 * 21.0.6-oracle
+* 17.0.14-tem
+* 17.0.14-amzn
+
 
 ## Running the MVP
 
