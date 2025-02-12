@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.example'
+version = '1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+def icebergVersion = '1.7.1'
+def sparkVersion = '3.5.4'
+def testcontainersVersion = '1.20.4'
+def awsSdkVersion = '2.24.6'
+
+dependencies {
+    implementation "org.apache.iceberg:iceberg-core:${icebergVersion}"
+    implementation "org.apache.iceberg:iceberg-spark-runtime-3.4_2.12:${icebergVersion}"
+    implementation "org.apache.spark:spark-sql_2.12:${sparkVersion}"
+    implementation "org.apache.hadoop:hadoop-client-runtime:3.3.4"
+    implementation "org.apache.hadoop:hadoop-aws:3.3.4"
+    implementation "software.amazon.awssdk:s3:${awsSdkVersion}"
+    implementation "software.amazon.awssdk:apache-client:${awsSdkVersion}"
+    implementation "org.testcontainers:testcontainers:${testcontainersVersion}"
+    implementation "org.testcontainers:localstack:${testcontainersVersion}"
+}
+
+application {
+    mainClass = 'Main'
+}
