@@ -16,6 +16,18 @@ So calling `sparkSession.catalog().listTables("namespace");` with warehouse path
 - Gradle
 - Docker (used for LocalStack S3) 
 
+## JVM dependency
+The appearance of the bug seems related to the JVM, I've tested a few,
+
+**confirmed broken (bug occurs):**
+* 11.0.19-zulu
+* 11.0.26-zulu
+* 17.0.12-oracle
+
+**confirmed OK (bug doesn't occur):**
+* 17.0.12-zulu
+* 21.0.6-oracle
+
 ## Running the MVP
 
 execute
